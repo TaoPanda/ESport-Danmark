@@ -1,0 +1,45 @@
+﻿<Window x:Class="ESport_Danmark.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ESport_Danmark"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" SizeToContent="WidthAndHeight">
+    <Grid>
+        <DataGrid Name="Spiller_datagrid" IsReadOnly="True" Margin="10,94,10,10" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Navn" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="SummonerNavn" Binding="{Binding SummonerName}"/>
+                <DataGridTextColumn Header="Rang" Binding="{Binding Rang}"/>
+                <DataGridTextColumn Header="Telefonnummer" Binding="{Binding Telefonnummer}"/>
+                <DataGridTextColumn Header="Tuneringstype" Binding="{Binding Tuneringstype}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Tilføj ny spiller" Name="AddPlayer_btn" HorizontalAlignment="Left" Margin="79,69,0,0" VerticalAlignment="Top" Click="AddPlayer_btn_Click"/>
+        <Grid Margin="79,110,463,49" Background="lightgray" Name="AddNewPlayer_grid" Visibility="Hidden">
+            <TextBox HorizontalAlignment="Left" Margin="110,23,0,0" Text="" Name="Playername_input" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,28,0,0" Text="Navn:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="110,46,0,0" Text="" Name="Summonername_input" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,48,0,0" Text="SummonerNavn:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,71,0,0" Text="Rang:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,94,0,0" Text="Telefonnummer:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,117,0,0" Text="Tuneringstype:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="110,69,0,0" Text="" Name="Rang_input" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+            <TextBox HorizontalAlignment="Left" Margin="110,92,0,0" Text="" Name="Telefonnummer_input" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+            <TextBox HorizontalAlignment="Left" Margin="110,115,0,0" Text="" Name="Tuneringstype_input" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+            <Button Content="Confirm" Name="NewPlayerConfirm_btn" HorizontalAlignment="Left" Margin="202,245,0,0" VerticalAlignment="Top" Click="NewPlayerConfirm_btn_Click"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,152,0,0" Text="SummonerNavn skal være gyldigt." Name="SummonerWarning_txtblock" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,194,0,0" Text="Telefonnummer kan kun bruges en gang." Name="TelefonnummerWarning_txtblock" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,215,0,0" Text="Gyldige tuneringstyper: 5v5, 3v3, 1v1." Name="TuneringstypeWarning_txtblock" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,173,0,0" Text="Telefonnumer må kun være tal." Name="TelefonnummerNumberWarning" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        </Grid>
+        <Button Content="Update Info" Name="UpdateInfo_btn" HorizontalAlignment="Left" Margin="244,69,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Grid Margin="158,137,332,186" Background="lightgray" Name="UpdatePlayer_grid" Visibility="Hidden">
+            <Button Content="Navn" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" Text="Vælg info til at updatere" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Button Content="" HorizontalAlignment="Left" Margin="47,36,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>
